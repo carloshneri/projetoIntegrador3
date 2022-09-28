@@ -1,0 +1,49 @@
+Gerenciador
+
+<TelaEntrada>:
+    name: "TelaEntrada"
+    FloatLayout:
+        
+        canvas.before:
+            Color:
+                rgba:(17/255, 186/255, 253/255,1)
+            Rectangle:
+                pos: self.pos
+                size:self.size
+        Image:
+            source: "./images/pi3_imag_02.png"
+        
+        Button:
+            text: 'Entrar'
+            font_size:'30dp'
+            pos_hint:{'center_x':0.5,'center_y':0.2}
+            background_color:(18/255, 186/255, 253/255, 1)
+            size_hint:None, None
+            height: '40dp'
+            on_release:root.manager.current ='Pesquisa'
+        
+            
+<Pesquisa>:
+    name:"Pesquisa"
+    FloatLayout:
+        MenuSuperior
+        Label:
+            text: 'tela Pesquisa'
+        
+
+<MenuSuperior>:
+    size_hint: 1, None
+    heigth:'400dp'
+    canvas.before:
+        Color:
+            rgba:(17/255, 186/255, 253/255,1)
+        Rectangle:
+            pos: self.pos
+            size:self.size
+    Image:
+        source:"./images/pi3_imag_02.png"
+        pos_hint:{'center_x':0.15, 'center_y':0.5}
+        
+    Label:
+        text:'NOME APP'
+        pos_hint: {'center_x':0.4, 'center_y':0.5}
