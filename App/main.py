@@ -1,28 +1,29 @@
-from kivy.app import App
-from kivy.uix.floatlayout import FloatLayout
-from kivy.uix.screenmanager import ScreenManager, Screen
+from kivymd.app import MDApp
+from kivy.metrics import dp
 
 
+from kivymd.uix.label import MDLabel
+from kivymd.uix.datatables import MDDataTable
+#Layout
+from kivymd.uix.boxlayout import MDBoxLayout
+from kivymd.uix.floatlayout import MDFloatLayout
 
-class Gerenciador(ScreenManager):
+#Screen
+from kivymd.uix.screenmanager import MDScreenManager
+from kivymd.uix.screen import MDScreen
+
+
+class Gerenciador(MDScreenManager):
     pass
 
-class MenuSuperior(FloatLayout):
+
+class Tela(MDFloatLayout):
     pass
 
 
-class TelaEntrada(Screen):
-    pass
-
-class Pesquisa(Screen):
+class MainApp(MDApp):
     pass
 
 
-class MainApp(App):
-    gerenciador = Gerenciador()
-    def build(self):
-        self.gerenciador.add_widget(TelaEntrada(name='TelaEntrada'))
-        self.gerenciador.add_widget(Pesquisa(name='Pesquisa'))
-        return self.gerenciador
 
 MainApp().run()
