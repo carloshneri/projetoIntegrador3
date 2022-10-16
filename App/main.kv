@@ -1,46 +1,66 @@
 
-Gerenciador
+#Gerenciador
 
 
-<Gerenciador>:
-    MDScreen:
-        Tela:
+#<Gerenciador>:
+ #   TelaInicial
+ #   Tela
     
-  
-<Tela>:
-    canvas.before:
-        Color:
-            rgba:(17/255, 186/255, 253/255,1)
-        Rectangle:
-            pos: self.pos
-            size:self.size
 
-    MDTextField:
-        id:Texto_municipio
-        size_hint_x: .5
-        pos_hint:{'center_x':0.5, 'center_y':0.6}
-        hint_text:'Municipio'
-        hint_text_color_normal:'white'
-        hint_text_color_focus:'white'
-        text_color_normal: "white"
-        text_color_focus: 'white'
-        line_color_normal:'white'
-        line_color_focus:'white'
-    MDTextField:
-        id:Texto_medicamento
-        size_hint_x: .5
-        pos_hint:{'center_x':0.5, 'center_y':0.5}
-        hint_text:'Medicamento'
-        hint_text_color_normal:'white'
-        hint_text_color_focus:'white'
-        text_color_normal: "white"
-        text_color_focus: 'white'
-        line_color_normal:'white'
-        line_color_focus:'white'
+<TelaInicial>:
+    name:'TelaInicial'
+    MDFloatLayout:
+        canvas.before:
+            Color:
+                rgba:(17/255, 186/255, 253/255,1)
+            Rectangle:
+                pos: self.pos
+                size:self.size
 
-    MDFillRoundFlatButton:
-        id:Botao_pesquisa
-        text: 'Pesquisar'
-        pos_hint:{'center_x': 0.8, 'center_y':0.3 }
-    #  on_press: root.pesquisa_lista(Texto_municipio, Texto_medicamento, Botao_pesquisa)
-        # on_press: root.manager.current = 'Tela1'
+        MDTextField:
+            id:Texto_municipio
+            size_hint_x: .5
+            pos_hint:{'center_x':0.5, 'center_y':0.6}
+            hint_text:'Municipio'
+            hint_text_color_normal:'white'
+            hint_text_color_focus:'white'
+            text_color_normal: "white"
+            text_color_focus: 'white'
+            line_color_normal:'white'
+            line_color_focus:'white'
+        MDTextField:
+            id:Texto_medicamento
+            size_hint_x: .5
+            pos_hint:{'center_x':0.5, 'center_y':0.5}
+            hint_text:'Medicamento'
+            hint_text_color_normal:'white'
+            hint_text_color_focus:'white'
+            text_color_normal: "white"
+            text_color_focus: 'white'
+            line_color_normal:'white'
+            line_color_focus:'white'
+        MDFillRoundFlatButton:
+            id:Botao_pesquisa
+            text: 'Pesquisar'
+            pos_hint:{'center_x': 0.8, 'center_y':0.3 }
+            #on_press: root.pesquisa_lista(Texto_municipio, Texto_medicamento, Botao_pesquisa)
+            on_press: root.pesquisa_lista(Texto_municipio, Texto_medicamento)
+            
+            
+
+<Tela>
+    name:"Tela"
+    MDFloatLayout:
+        MDSpinner:
+            id:spinner
+            size_hint:None, None
+            size: dp(46), dp(46)
+            pos_hint:{'center_x': .5, 'center_y': .5}
+            active: True
+
+    MDLabel:
+        id:municipio
+        text: ''
+    MDLabel
+        id:remedio
+        text: ''
