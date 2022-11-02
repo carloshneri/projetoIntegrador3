@@ -37,17 +37,17 @@ version = 0.1
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,Kivy==2.1.0,https://github.com/kivymd/KivyMD/archive/master.zip,requests==2.28.1
+requirements = python3,Kivy==2.1.0,https://github.com/kivymd/KivyMD/archive/master.zip,requests==2.28.1, Kivy-Garden==0.1.5,kivy-garden.mapview==1.0.6, urllib3==1.26.12,charset-normalizer==2.1.1,idna==3.4 
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
 # requirements.source.kivy = ../../kivy
 
 # (str) Presplash of the application
-presplash.filename = %(source.dir)s/images/pi3_imag_02.png
-
-# (str) Icon of the application
-#icon.filename = %(source.dir)s/data/icon.png
+#presplash.filename = %(source.dir
+#icon.filename = %(source.dir
+# (str) Icon of the appllication
+#icon.filename = %(source.dirr)s/data/icon.png
 
 # (str) Supported orientation (one of landscape, sensorLandscape, portrait or all)
 orientation = portrait
@@ -80,7 +80,7 @@ fullscreen = 0
 # red, blue, green, black, white, gray, cyan, magenta, yellow, lightgray,
 # darkgray, grey, lightgrey, darkgrey, aqua, fuchsia, lime, maroon, navy,
 # olive, purple, silver, teal.
-android.presplash_color = #11BAFD
+#android.presplash_color = #FFFFFF
 
 # (string) Presplash animation using Lottie format.
 # see https://lottiefiles.com/ for examples and https://airbnb.design/lottie/
@@ -249,7 +249,7 @@ android.permissions = INTERNET
 #android.uses_library =
 
 # (str) Android logcat filters to use
-#android.logcat_filters = *:S python:D
+android.logcat_filters = *:S python:D
 
 # (bool) Android logcat only display log for activity's pid
 #android.logcat_pid_only = False

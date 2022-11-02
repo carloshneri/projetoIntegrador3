@@ -28,6 +28,7 @@
             text_color_focus: 'white'
             line_color_normal:'white'
             line_color_focus:'white'
+
         MDTextField:
             id:Texto_medicamento
             size_hint_x: .5
@@ -39,14 +40,20 @@
             text_color_focus: 'white'
             line_color_normal:'white'
             line_color_focus:'white'
+
         MDFillRoundFlatButton:
             id:Botao_pesquisa
             text: 'Pesquisar'
             pos_hint:{'center_x': 0.8, 'center_y':0.3 }
-            #on_press: root.pesquisa_lista(Texto_municipio, Texto_medicamento, Botao_pesquisa)
             on_press: root.pesquisa_lista(Texto_municipio, Texto_medicamento)
+        
+        MDFillRoundFlatButton:
+            id:Mapa
+            text: 'Mapa'
+            pos_hint:{'center_x': 0.5, 'center_y':0.3 }
+            on_press: root.abrir_mapa()
             
-            
+
 
 <Tela>
     name:"Tela"
@@ -64,3 +71,6 @@
     MDLabel
         id:remedio
         text: ''
+
+       
+    
