@@ -1,16 +1,6 @@
-
-#Gerenciador
-
-
-#<Gerenciador>:
- #   TelaInicial
- #   Tela
-    
-
 <TelaInicial>:
-
-
     name:'TelaInicial'
+    id:telainicial
     MDFloatLayout:
         canvas.before:
             Color:
@@ -18,9 +8,8 @@
             Rectangle:
                 pos: self.pos
                 size:self.size
-
         
-
+# campo para adicionar o municipio na tela de busca        
         MDTextField:
             id:Texto_municipio
             size_hint_x: .5
@@ -51,26 +40,81 @@
             pos_hint:{'center_x': 0.8, 'center_y':0.3 }
             on_press: root.pesquisa_lista(Texto_municipio, Texto_medicamento)
         
-        MDFillRoundFlatButton:
-            id:Mapa
-            text: 'Mapa'
-            pos_hint:{'center_x': 0.5, 'center_y':0.3 }
-            on_press: root.abrir_mapa()
+        #MDFillRoundFlatButton:
+        #    id:Mapa
+        #    text: 'Mapa'
+        #    pos_hint:{'center_x': 0.5, 'center_y':0.3 }
+        #    on_press: root.abrir_mapa()
             
 
 
-<Tela>
-    name:"Tela"
-         
+<PesquisaLista>
+    name:"pesquisalista"
+    id:pesquisalista
     MDFloatLayout:
         MDLabel:
             id:municipio
             text: ''
         MDLabel
-            id:remedio
+            id:medicamento
             text: ''
+            
 
+<TabMapa>:
+    name:"TabMapa"
+    id:tabmapa
+    title:"Mapa"
+    MDFloatLayout:
+        id:telamapa
+      
 
+<TabResultado>:
+    id:tabresultado
+    name:"TabResultado"
+    title:"Resultado"        
+    MDBoxLayout:
+        name:"telaresultado"
+        id:telaresultado
+        
+    
+
+<TelaTab>:
+    id:tela_tab
+    name:"tela_tab"
+    
+    MDBoxLayout:
+        orientation: "vertical"
+        
+        MDTopAppBar:
+            title:"Projeto Integrador"
+            MDIconButton:
+                icon:"arrow-left"
+                color:(1,1,1,1)
+                on_press: root.manager.current = 'telainicial'
+
+        MDTabs:
+            id:tabs
+            on_tab_switch: root.on_tab_switch(*args)
+        
+        MDLabel:
+            id:municipio
+            text: ''
+            size_hint:None, None
+            width: '0dp'
+            height: '0dp'
+            color:(1,1,1,1)   
+        MDLabel
+            id:medicamento
+            text: ''
+            color:(1,1,1,1) 
+            size_hint:None, None
+            width: '0dp'
+            height: '0dp'  
+            
+                
+        
+            
+          
+    
 
    
-
